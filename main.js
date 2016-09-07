@@ -1,16 +1,14 @@
 window.addEventListener("load", function() {
+
   var boton = document.getElementById("calcular");
-  boton.addEventListener("click", function() {
+  boton.addEventListener("click", function(){
 
     var segundos = parseFloat(document.getElementById("segundos").value);
+    setInterval(colorRandown,segundos*1000);
 
-    setInterval(function(colorRandown){document.body.style.backgroundColor = //color//
-    	'#'+Math.floor(Math.random()*16777215).toString(16);}
-    , segundos*1000);
+    function colorRandown(){
+	  	document.body.style.backgroundColor ='#'+Math.floor(Math.random()*16777215).toString(16);
+  	}
+
   });
-
-  // function colorRandown(){
-  // 	'#'+Math.floor(Math.random()*16777215).toString(16);
-  // }
-
 });
